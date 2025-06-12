@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Photo Gallery</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: sans-serif;
+      background: #f0f2f5;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>My Photo Gallery</h1>
+  <div class="gallery" id="gallery"></div>
+
+  <script>
+    const gallery = document.getElementById('gallery');
+    for (let i = 1; i <= 100; i++) {
+      const img = document.createElement('img');
+      img.src = `images/${i}.jpg`; // You can change this path as needed
+      img.alt = `Photo ${i}`;
+      gallery.appendChild(img);
+    }
+  </script>
+
+</body>
+</html>
+
